@@ -1,0 +1,53 @@
+#include <complex.h>
+#include <mpfr.h>
+#include <mpc.h>
+#include<stdio.h>
+
+mpc_t T0;mpc_init2(T0, 128);
+mpc_set_si(T0,0,MPC_RNDZZ);
+mpc_t T1;mpc_init2(T1, 128);
+mpc_set_si(T1,145,MPC_RNDZZ);
+mpc_t T2;mpc_init2(T2, 128);
+mpc_set_si(T2,5,MPC_RNDZZ);
+mpc_div(T1,T1,T2,MPC_RNDZZ);
+int c = mpc_get_ldc(T1, 128);
+mpc_t T3;mpc_init2(T3, 128);
+mpc_set_si(T3,14,MPC_RNDZZ);
+mpc_t T4;mpc_init2(T4, 128);
+mpc_set_si(T4,12,MPC_RNDZZ);
+mpc_mul(T4,T1,T4,MPC_RNDZZ);
+mpc_add(T3,T3,T4,MPC_RNDZZ);
+mpc_t T5;mpc_init2(T5, 128);
+mpc_set_si(T5,20,MPC_RNDZZ);
+mpc_add(T3,T3,T5,MPC_RNDZZ);
+int f = mpc_get_ldc(T3, 128);
+mpc_t T6;mpc_init2(T6, 128);
+mpc_set_si(T6,5,MPC_RNDZZ);
+mpc_t T7;mpc_init2(T7, 128);
+mpc_set_si(T7,2,MPC_RNDZZ);
+mpc_sub(T7,T1,T7,MPC_RNDZZ);
+mpc_mul(T6,T6,T7,MPC_RNDZZ);
+mpc_add(T3,T0,T6,MPC_RNDZZ);
+f = mpc_get_ldc(T3, 128);
+mpc_t T8;mpc_init2(T8, 128);
+mpc_set_si(T8,-5,MPC_RNDZZ);
+int tom = mpc_get_ldc(T8, 128);
+mpc_t T9;mpc_init2(T9, 128);
+mpc_set_si(T9,-5,MPC_RNDZZ);
+int tom1 = mpc_get_ldc(T9, 128);
+mpc_t T10;mpc_init2(T10, 128);
+mpc_set_si(T10,-2,MPC_RNDZZ);
+int aaa = mpc_get_ldc(T10, 128);
+mpc_clear(T0);
+mpc_clear(T1);
+mpc_clear(T2);
+mpc_clear(T3);
+mpc_clear(T4);
+mpc_clear(T5);
+mpc_clear(T6);
+mpc_clear(T7);
+mpc_clear(T8);
+mpc_clear(T9);
+mpc_clear(T10);
+
+
